@@ -1,0 +1,31 @@
+package validadoremail;
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class ValidadorEmail {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("=== VALIDADOR DE EMAIL ===");
+        System.out.print("Ingrese un correo electronico: ");
+        String email = entrada.nextLine();
+
+        if (validarEmail(email)) {
+            System.out.println("El correo ingresado es valido.");
+        } else {
+            System.out.println("El correo ingresado no es valido.");
+        }
+
+        entrada.close();
+    }
+
+    public static boolean validarEmail(String email) {
+
+        String patronEmail = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+
+        return Pattern.matches(patronEmail, email);
+    }
+}
