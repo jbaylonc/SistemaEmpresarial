@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class comprobantepago {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        double total, subtotal, igv;
+
+        System.out.print("Ingrese el total: ");
+        total = entrada.nextDouble();
+
+        subtotal = total / 1.18;
+        igv = total - subtotal;
+
+        System.out.printf("Subtotal: S/ %.2f%n", subtotal);
+        System.out.printf("IGV: S/ %.2f%n", igv);
+        System.out.printf("Total: S/ %.2f%n", total);
+
+        entrada.close();
+    }
+}
